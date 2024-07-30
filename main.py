@@ -1,0 +1,20 @@
+import downloadDataset
+import preProcessingDataset
+import apprendimentoSupervisionato
+import apprendimentoNonSupervisionato
+import kb
+
+downloadDataset.download_kaggle_dataset(downloadDataset.dataset_name, downloadDataset.path_data_raw)
+downloadDataset.download_kaggle_dataset(downloadDataset.dataset_name2,  downloadDataset.path_data_raw)
+
+kb.creazioneFeatureIngegnerizzate()
+
+preProcessingDataset.preProcessingImage()
+preProcessingDataset.preProcessingCSV()
+
+apprendimentoSupervisionato.apprendimentoCNN()
+apprendimentoSupervisionato.apprendimentoAlgoritmi()
+
+apprendimentoNonSupervisionato.KMeansAnomalyDetection()
+apprendimentoNonSupervisionato.DBScan()
+apprendimentoNonSupervisionato.autoencoderAnomalyDetection()
